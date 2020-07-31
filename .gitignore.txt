@@ -1,0 +1,4 @@
+output
+output_playlist
+SpotifyAPI_Client.ipynb
+.ipynb_checkpoints
