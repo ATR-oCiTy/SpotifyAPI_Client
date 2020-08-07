@@ -1,4 +1,4 @@
-output
-output_playlist
+output.json
+output_playlist.json
 SpotifyAPI_Client.ipynb
 .ipynb_checkpoints

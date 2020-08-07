@@ -115,8 +115,8 @@ class SpotifyAPI(object):
             return {}
         return r.json()
     
-    def search(self, query=None, operator=None, operator_query=None, search_type='album' ):
-        # To search for a track, album or playlist using any search query
+    def search(self, query=None, operator=None, operator_query=None, search_type='album', limit = 50 ):
+        
         if query == None:
             raise Exception("A query is required")
         if isinstance(query, dict):
@@ -126,11 +126,11 @@ class SpotifyAPI(object):
                 operator = operator.upper()
                 if isinstance(operator_query, str):
                     query = f"{query} {operator} {operator_query}"
-        query_params = urlencode({"q": query, "type": search_type.lower()})
+        query_params = urlencode({"q": query, "type": search_type.lower(), "limit": limit})
         print(query_params)
         return self.base_search(query_params)
     
-    def get_playlist_tracks(self, playlist_id): #To retrieve track info using playlist id
+    def get_playlist_tracks(self, playlist_id):
         headers = self.get_resource_header()
         endpoint = "https://api.spotify.com/v1/playlists"
         lookup_url = f"{endpoint}/{playlist_id}/tracks"
