@@ -16,7 +16,17 @@ import requests
 
 class SpotifyAPI(object):
 
-    """ Spotify Api """
+    """ 
+    This is a class for accessing the Spotify API Client
+
+    Attributes :
+
+      1) client_id(string)     : A unique code for accessing the
+                                 Spotify API
+      2) client_secret(string) : A unique code for accessing the 
+                                 Spotify API
+                                  
+    """
     
     access_token = None
     access_token_expires = datetime.datetime.now()
