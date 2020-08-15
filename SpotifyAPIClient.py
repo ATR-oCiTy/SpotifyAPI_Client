@@ -15,6 +15,8 @@ import requests
 
 
 class SpotifyAPI(object):
+
+    """ Spotify Api """
     
     access_token = None
     access_token_expires = datetime.datetime.now()
